@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>英语学习工作台 · CET-4 冲刺</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- 移动端遮罩 -->
+<div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+<div class="app">
+  <!-- ====== 侧边导航 ====== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-avatar">E</div>
+      <div class="brand-info">
+        <div class="brand-name">English Workbench</div>
+        <div class="brand-role">CET-4 冲刺计划</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <div class="nav-section-label">计划</div>
+      <button class="nav-item" data-module="profile">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        我的目标
+      </button>
+
+      <div class="nav-section-label">学习模块</div>
+      <button class="nav-item active" data-module="goal">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        目标看板
+      </button>
+      <button class="nav-item" data-module="tasks">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        每日任务卡
+      </button>
+      <button class="nav-item" data-module="vocab">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        词汇库
+      </button>
+      <button class="nav-item" data-module="materials">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+        素材库
+      </button>
+
+      <div class="nav-section-label">练习模块</div>
+      <button class="nav-item" data-module="quiz">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        背单词测验
+      </button>
+      <button class="nav-item" data-module="conversation">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        对话练习
+      </button>
+      <button class="nav-item" data-module="writing">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        写作练习
+      </button>
+      <button class="nav-item" data-module="translation">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+        翻译练习
+      </button>
+
+      <div class="nav-section-label">记录与回顾</div>
+      <button class="nav-item" data-module="review">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+        复盘日志
+      </button>
+      <button class="nav-item" data-module="stats">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        学习统计
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="streak-box">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+        <div>
+          <div class="streak-num" id="streakNum">0</div>
+          <div class="streak-text">连续打卡天数</div>
+        </div>
+      </div>
+      <div class="copyright" id="footerNote">Keep going!</div>
+    </div>
+  </aside>
+
+  <!-- ====== 主区域 ====== -->
+  <main class="main">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <button class="menu-toggle" id="menuToggle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <h1 class="topbar-title" id="pageTitle">目标看板</h1>
+      </div>
+      <div class="topbar-meta">
+        <span class="badge badge-green">CET-4</span>
+        <span class="badge badge-orange" id="weekBadge">第 1 周 / 共 12 周</span>
+        <span class="badge badge-gray" id="dateBadge"></span>
+      </div>
+    </header>
+
+    <div class="content" id="content">
+      <!-- 模块内容由 app.js 渲染 -->
+    </div>
+  </main>
+</div>
+
+<!-- 词汇详情弹窗 -->
+<div class="modal-overlay" id="vocabModal">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="modal-word" id="modalWord"></div>
+    <div class="modal-phonetic" id="modalPhonetic"></div>
+    <div class="modal-meaning" id="modalMeaning"></div>
+    <div class="modal-example" id="modalExample"></div>
+    <div class="modal-example-cn" id="modalExampleCn"></div>
+    <div id="modalPairTip"></div>
+    <div class="modal-actions">
+      <button class="btn" id="btnSpeakWord">🔊 读单词</button>
+      <button class="btn" id="btnSpeakExample">🔊 读例句</button>
+      <button class="btn" id="btnDeleteWord" style="color:var(--danger);">删除</button>
+      <button class="btn btn-primary" id="btnAlreadyKnow">标记为已掌握</button>
+    </div>
+  </div>
+</div>
+
+<!-- 导入单词书弹窗 -->
+<div class="modal-overlay" id="importModal">
+  <div class="modal-panel import-panel">
+    <div class="modal-header">
+      <h3>导入单词书</h3>
+      <button class="modal-close" id="importClose">×</button>
+    </div>
+    <div class="import-tabs">
+      <button class="import-tab active" data-import-tab="file">📄 文件导入</button>
+      <button class="import-tab" data-import-tab="paste">📋 粘贴文本</button>
+    </div>
+    <div class="import-body">
+      <div class="import-pane" data-pane="file">
+        <input type="file" id="importFile" accept=".txt,.csv,.json,.md,.pdf" class="import-file-input" />
+        <p class="import-hint">支持 .txt / .csv / .json / .md / .pdf。<strong>PDF 需联网一次</strong>加载解析库；若 PDF 是扫描件或释义为图片，则无法解析，请改用「粘贴文本」。</p>
+      </div>
+      <div class="import-pane hidden" data-pane="paste">
+        <textarea id="importPaste" class="import-textarea" placeholder="每行一个单词，支持格式：&#10;word, 释义&#10;word - 释义&#10;word	释义&#10;JSON: [{&quot;word&quot;:&quot;...&quot;,&quot;meaning&quot;:&quot;...&quot;}]"></textarea>
+      </div>
+    </div>
+    <div class="import-format-hint">
+      <strong>支持的行格式：</strong><br>
+      • <code>word, 中文释义</code><br>
+      • <code>word - 中文释义</code><br>
+      • <code>word	中文释义</code>（制表符）<br>
+      • <code>word 中文释义</code>（空格分隔）<br>
+      • JSON 数组：<code>[{"word":"...","meaning":"...","phonetic":"...","example":"..."}]</code>
+    </div>
+    <div class="inline-note" id="pdfOfflineNote" style="display:none;"></div>
+    <div class="import-preview" id="importPreview" style="display:none;">
+      <div class="import-preview-header">
+        <span>预览（共 <span id="importCount">0</span> 个单词）</span>
+        <label style="font-size:var(--fs-sm);color:var(--text-sub);">
+          <input type="checkbox" id="importSelectAll" checked /> 全选
+        </label>
+      </div>
+      <div class="import-preview-table" id="importPreviewTable"></div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn" id="importParse">解析预览</button>
+      <button class="btn btn-primary" id="importConfirm">确认导入</button>
+    </div>
+  </div>
+</div>
+
+<!-- 添加单词弹窗 -->
+<div class="modal-overlay" id="addWordModal">
+  <div class="modal-panel">
+    <div class="modal-header">
+      <h3 id="addWordTitle">添加单词</h3>
+      <button class="modal-close" id="addWordClose">×</button>
+    </div>
+    <div class="form-row">
+      <label>单词 *</label>
+      <input type="text" id="awWord" placeholder="如：abandon" />
+    </div>
+    <div class="form-row">
+      <label>音标</label>
+      <input type="text" id="awPhonetic" placeholder="如：/əˈbændən/" />
+    </div>
+    <div class="form-row">
+      <label>释义 *</label>
+      <input type="text" id="awMeaning" placeholder="如：v. 放弃；抛弃" />
+    </div>
+    <div class="form-row">
+      <label>例句</label>
+      <input type="text" id="awExample" placeholder="英文例句" />
+    </div>
+    <div class="form-row">
+      <label>例句翻译</label>
+      <input type="text" id="awExampleCn" placeholder="中文翻译" />
+    </div>
+    <div class="form-row">
+      <label>记忆技巧</label>
+      <input type="text" id="awTip" placeholder="词根词缀或联想（选填）" />
+    </div>
+    <div class="form-row">
+      <label>分类</label>
+      <select id="awCategory">
+        <option value="high">高频词</option>
+        <option value="confused">易混词</option>
+        <option value="mastered">已掌握</option>
+      </select>
+    </div>
+    <div class="modal-actions">
+      <button class="btn" id="addWordCancel">取消</button>
+      <button class="btn btn-primary" id="addWordSave">保存</button>
+    </div>
+  </div>
+</div>
+
+<!--
+  脚本加载顺序有要求：
+  · 数据文件（mock / words-extra / practice-data）先挂好全局量
+  · core.js 提供工具、存储、state、注册表、语音
+  · plan.js 是学习计划推导引擎（依赖 core.js 的日期工具与 state.profile）
+  · 各模块文件自己调用 Modules.register 注册
+  · app.js 必须最后，因为它在末尾调用 init()
+
+  注意：这里刻意没有从 CDN 引入 pdf.js。原先是放在页面里，
+  等于每次打开都要往网上发一次请求；现在改成只有真的选了 PDF 文件时才加载
+  （见 module-vocab.js 的 ensurePdfJs），平时完全离线。
+-->
+<script src="mock.js"></script>
+<script src="words-extra.js"></script>
+<script src="practice-data.js"></script>
+<script src="core.js"></script>
+<script src="plan.js"></script>
+<script src="quiz.js"></script>
+<script src="module-vocab.js"></script>
+<script src="module-quiz.js"></script>
+<script src="module-practice.js"></script>
+<script src="module-stats.js"></script>
+<script src="module-profile.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
