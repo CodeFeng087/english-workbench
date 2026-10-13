@@ -646,7 +646,7 @@ Modules.register("review", { title: "复盘日志", render: renderReview, order:
 // 让目标看板、每日任务卡、词汇库、复盘日志、学习统计都能看到 8 天的真实感。
 // 只播种一次（靠 ewb_demo_seeded 标记），之后用户的真实操作不会被覆盖。
 function seedDemoData() {
-  const FLAG = "ewb_demo_seeded_v2";
+  const FLAG = "ewb_demo_seeded_v3";
   if (localStorage.getItem(FLAG)) return;
 
   const today = todayStr();
