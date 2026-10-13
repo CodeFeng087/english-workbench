@@ -274,7 +274,7 @@ const vocabulary = [
     example: "This small car is very economical on fuel.", exampleCN: "这辆小车非常省油。", list: "confused", category: "confused",
     pairWith: "economic", pairTip: "economical = 节约的；economic = 经济的" },
 
-  // ===== 已掌握（示例） =====
+  // ===== 已掌握 =====
   { id: 40, word: "the",    phonetic: "/ðə/",   meaning: "art. 这；那",
     example: "The book is on the desk.", exampleCN: "书在桌子上。", list: "mastered", category: "mastered" },
   { id: 41, word: "be",     phonetic: "/biː/",  meaning: "v. 是；存在",

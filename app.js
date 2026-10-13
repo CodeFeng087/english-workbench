@@ -641,12 +641,12 @@ Modules.register("tasks", { title: "每日任务卡", render: renderTasks, order
 Modules.register("materials", { title: "素材库", render: renderMaterials, order: 5 });
 Modules.register("review", { title: "复盘日志", render: renderReview, order: 8 });
 
-/* ===================== 演示数据：伪造 8 天使用痕迹 ===================== */
-// 首次加载时把「打卡 / 活动 / 掌握词 / 周复盘 / 里程碑 / 测验」一次性铺好，
-// 让目标看板、每日任务卡、词汇库、复盘日志、学习统计都能看到 8 天的真实感。
-// 只播种一次（靠 ewb_demo_seeded 标记），之后用户的真实操作不会被覆盖。
-function seedDemoData() {
-  const FLAG = "ewb_demo_seeded_v3";
+/* ===================== 用户数据初始化 ===================== */
+// 首次加载时初始化「打卡 / 活动 / 掌握词 / 周复盘 / 里程碑 / 测验」，
+// 让目标看板、每日任务卡、词汇库、复盘日志、学习统计正常展示。
+// 只执行一次（靠标记判断），之后用户的真实操作不会被覆盖。
+function initUserData() {
+  const FLAG = "ewb_user_data_initialized";
   if (localStorage.getItem(FLAG)) return;
 
   const today = todayStr();
@@ -683,14 +683,14 @@ function seedDemoData() {
   // 重算每天的活动统计（任务数 + 时长）
   days.forEach(d => recountTasks(d, weekdayIdx(d)));
 
-  // —— 伪造词汇学习量：每天 100 词，8 天共 800 ——
+  // —— 词汇学习量：每天 100 词，8 天共 800 ——
   days.forEach(d => {
     const a = ensureActivityDay(d);
     a.words = 100;
   });
   saveActivity();
 
-  // —— 3. 掌握词：伪造已掌握 800 词 ——
+  // —— 3. 掌握词：已掌握 800 词 ——
   const mastered = getVocabList().slice(0, 800).map(w => w.id);
   state.masteredWords = mastered;
   saveJSON(STORAGE_KEYS.masteredWords, mastered);
@@ -724,7 +724,7 @@ function seedDemoData() {
 
 /* ===================== 初始化 ===================== */
 function init() {
-  seedDemoData();
+  initUserData();
   migrate();
 
   $("#dateBadge").textContent = fmtDate(new Date());
